@@ -24,35 +24,12 @@ nav ul {
 }
 
 nav a {
+  color: #0b5fff;
   color: #4876cb;
   text-decoration: none;
   font-weight: bold;
 }
-nav a:hover {
-  text-decoration: underline;
-}
-
-main {
-  display: flex;
-  gap: 24px;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 16px;
-  background: #fff;
-  border-radius: 8px;
-}
-
-article {
-  flex: 2;
-}
-aside {
-  flex: 1;
-  background: #f0f4f8;
-  border-radius: 8px;
-  padding: 16px;
-}
-
-footer {
+@@ -56,4 +56,69 @@
   text-align: center;
   color: #c06b6b;
   font-size: 0.95rem;
