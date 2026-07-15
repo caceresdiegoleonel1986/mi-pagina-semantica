@@ -3,23 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Perfil Profesional</title>
+    <title>Perfil Profesional - Diego Leonel Caceres</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <!-- HEADER: Título y descripción -->
+    <!-- HEADER -->
     <header>
       <h1>Diego Leonel Caceres</h1>
-      <p>Mí primera web personal con HTML semántico.</p>
-      <p>Hola Buenod días</p>
+      <p>Mi primera web personal con HTML semántico.</p>
     </header>
-    <div class="container">
-<div class="ball">
-    </div>
-    <div class="shadow"></div>
-    </div>
 
-    <!-- NAV: Enlaces internos -->
+    <!-- NAV -->
     <nav>
       <ul>
         <li><a href="#sobremi">Sobre mí</a></li>
@@ -27,18 +21,36 @@
       </ul>
     </nav>
 
-    <!-- AREA DE CONTENIDO PRINCIPAL -->
+    <!-- MAIN -->
     <main>
       <article id="sobremi">
         <h2>Sobre mí</h2>
-        <img src=""C:\Users\cacer\OneDrive\Desktop\Full Stack SoyHenry\Modulo1\Lecture1\mi-pagina-semantica\img\IMG-FotodePerfil.jpg"" alt="Foto de perfil" width="120" />
-        <p>Desde joven estuve interesado en tecnología e informática, por cuestiones de la vida y de malas elecciones hasta el momento no me había podido acerca a ello. Hoy en día gracias a SoyHenry tengo la posibilidad de lograr uno de mis sueños. </p>
-          <H3>Interesado en :</H3>
-          <ul>
+        <div class="perfil">
+          <img src="./img/IMG-FotodePerfil.jpg" alt="Foto de perfil" width="150" />
+          <div class="container">
+            <div class="ball"></div>
+            <div class="shadow"></div>
+          </div>
+        </div>
+        <p>
+          Desde joven estuve interesado en tecnología e informática. Hoy en día,
+          gracias a SoyHenry, tengo la posibilidad de lograr uno de mis sueños.
+        </p>
+        <h3>Intereses</h3>
+        <ul>
           <li>JavaScript</li>
-          <li>Paython</li>
+          <li>Python</li>
           <li>CSS</li>
           <li>HTML</li>
-          <li>AI</li>
+          <li>Inteligencia Artificial</li>
         </ul>
       </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+      <p>📧 Contacto: diego.caceres@email.com</p>
+      <p>Villa María, Córdoba - Argentina</p>
+    </footer>
+  </body>
+</html>

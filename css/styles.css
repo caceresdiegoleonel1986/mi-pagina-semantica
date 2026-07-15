@@ -1,101 +1,164 @@
+/* 🎨 Estilos generales */
 body {
-  font-family: system-ui, Arial, sans-serif;
-  background: #f7fafc;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
   margin: 0;
-  color: #232629;
+  color: #333;
+  line-height: 1.6;
 }
 
-header, nav, footer {
-  padding: 16px;
-  background: #ffffff;
-  margin-bottom: 12px;
-}
-
+/* 🧩 Header */
 header {
-  border-bottom: 1px solid #e0e6ed;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #4876cb, #0b5fff);
+  color: #fff;
+  border-bottom: 4px solid #e0e6ed;
 }
 
+/* 🔗 Navegación */
+nav {
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 nav ul {
   list-style: none;
   display: flex;
-  gap: 16px;
-  padding: 0;
+  justify-content: center;
+  gap: 2rem;
   margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
 }
-
 nav a {
-  color: #0b5fff;
   color: #4876cb;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s;
 }
-@@ -56,4 +56,69 @@
-  text-align: center;
-  color: #c06b6b;
-  font-size: 0.95rem;
+nav a:hover {
+  color: #0b5fff;
 }
 
+/* 🧠 Contenido principal */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Perfil con pelota a la derecha */
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: flex-start; /* foto a la izquierda, pelota a la derecha */
+  flex-wrap: wrap;
+}
+main img {
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* ⚽ Pelota con reflejo */
 .container {
-    position: relative;
-    width: 100px;
-    margin: 2em auto;
+  position: relative;
+  width: 80px;
+  height: 120px;
 }
-
 .ball {
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 10;
-    background: radial-gradient(
-        circle at 0 0,
-        hsl(60,100%,50%) 25%,
-        hsl(60,100%,30%) 70%,
-        hsl(60,100%,1%)
-    );
-    /*animation-name: rebotar;
-    animation-duration: 3s;
-    animation-delay: 0;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in;*/
-    animation: rebotar .8s alternate infinite ease-in;
-} 
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at 30% 30%, #0b5fff, #4876cb, #1e3a8a);
+  animation: rebotarPerfil 1s alternate infinite ease-in;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  overflow: hidden;
+  z-index: 2;
+}
+.ball::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  filter: blur(4px);
+}
 
+/* Sombra */
 .shadow {
+  width: 80px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scale(0.6);
+  opacity: .3;
+  animation: sombraPerfil 1s alternate infinite ease-in;
+  z-index: 1;
+}
+
+/* 🔄 Animaciones */
+@keyframes rebotarPerfil {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(40px); height: 70px; } /* rebote hacia abajo */
+}
+@keyframes sombraPerfil {
+  0%, 30% { transform: scale(0.6); }
+  100% { transform: scale(1); opacity: .6; }
+}
+
+/* 📩 Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #4876cb;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+/* 📱 Responsividad */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  main {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  main img {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  nav ul {
+    gap: 0.5rem;
+  }
+  main {
+    padding: 0.5rem;
+  }
+  main img {
     width: 100px;
-    height: 6px;
-    background: #000;
-    box-shadow: 0 0 5px 5px #000;
-    border-radius: 50%;
-    position: absolute;
-    top: 282px;
-    transform: scale(0.5);
-    opacity: .2;
-    animation: sombra .8s alternate infinite ease-in;
-}
-
-@keyframes sombra {
-    0% , 30% {
-        transform: scale(0.5)
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: .6;
-    }
-}
-
-@keyframes rebotar {
-    90% {
-        height: 100px;
-    }
-
-    100% {
-        transform: translateY(200px);
-        height: 85px;
-    }
+  }
 }
